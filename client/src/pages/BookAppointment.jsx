@@ -22,7 +22,7 @@ function BookAppointment() {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "/api/doctor/get-doctor-info-by-id",
+        `${process.env.REACT_APP_API_URL}/api/doctor/get-doctor-info-by-id`,
         {
           doctorId: params.id,
         },
@@ -62,7 +62,7 @@ function BookAppointment() {
       }
       const fTime = sh + ":" + sm;
       const response = await axios.post(
-        "/api/user/check-booking-availability",
+        `${process.env.REACT_APP_API_URL}/api/user/check-booking-availability`,
         {
           doctorId: params.id,
           date: fDate,
@@ -107,7 +107,7 @@ function BookAppointment() {
       }
       const fTime = sh + ":" + sm;
       const response = await axios.post(
-        "/api/user/book-appointment",
+        `${process.env.REACT_APP_API_URL}/api/user/book-appointment`,
         {
           doctorId: params.id,
           userId: user._id,

@@ -16,7 +16,7 @@ function Home() {
     try {
       dispatch(showLoading());
       const token = localStorage.getItem("token");
-      const response = await axios.get("/api/user/get-all-approved-doctors", {
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/user/get-all-approved-doctors`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

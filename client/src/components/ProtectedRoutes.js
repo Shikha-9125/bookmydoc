@@ -13,7 +13,7 @@ const ProtectedRoutes = (props) => {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "/api/user/get-user-info-by-id",
+      `${process.env.REACT_APP_API_URL}/api/user/get-user-info-by-id`,
         {
           token: localStorage.getItem("token"),
         },

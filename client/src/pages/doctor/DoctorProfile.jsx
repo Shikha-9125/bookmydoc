@@ -46,7 +46,7 @@ function DoctorProfile() {
       let eTime = eh + ":" + em;
       dispatch(showLoading());
       const response = await axios.post(
-        "/api/doctor/update-doctor-profile",
+        `${process.env.REACT_APP_API_URL}/api/doctor/update-doctor-profile`,
         {
           ...values,
           userId: user._id,
@@ -77,7 +77,7 @@ function DoctorProfile() {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "/api/doctor/get-doctor-info-by-user-id",
+        `${process.env.REACT_APP_API_URL}/api/doctor/get-doctor-info-by-user-id`,
         {
           userId: params.id,
         },

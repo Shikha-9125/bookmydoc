@@ -14,7 +14,7 @@ function Appointments() {
     try {
       dispatch(showLoading());
       const response = await axios.get(
-        "/api/user/get-appointments-by-user-id",
+        `${process.env.REACT_APP_API_URL}/api/user/get-appointments-by-user-id`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,

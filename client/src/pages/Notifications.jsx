@@ -16,7 +16,7 @@ function Notifications() {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "/api/user/mark-all-notifications-as-seen",
+        `${process.env.REACT_APP_API_URL}/api/user/mark-all-notifications-as-seen`,
         { userId: user._id },
         {
           headers: {
@@ -41,7 +41,7 @@ function Notifications() {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "/api/user/delete-all-seen-notifications",
+        `${process.env.REACT_APP_API_URL}/api/user/delete-all-seen-notifications`,
         { userId: user._id },
         {
           headers: {
